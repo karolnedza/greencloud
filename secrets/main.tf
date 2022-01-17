@@ -21,3 +21,9 @@ output "tenant_id" {
   value = var.tenant_id
   sensitive = true
 }
+
+
+output "tf_token" {
+  value = var.tf_token
+  sensitive = true
+}
