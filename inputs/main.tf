@@ -1,6 +1,6 @@
 module "tf_workspace" {
 
-  source = "./terraform-tfe-workspace-master-2"
+  source = "./tfe-workspace"
 
   organization = "greencloud"
   name              = "dupa"
@@ -9,7 +9,7 @@ module "tf_workspace" {
       identifier = "karolnedza/avx-spoke-azure",
       oauth_token_id = "ot-vWFCSYDGESPuNwYU"
     }
-  
+
   variables = {
     terraform = {
       cidr = "1.2.3.4",
