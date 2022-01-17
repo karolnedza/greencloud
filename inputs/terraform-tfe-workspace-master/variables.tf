@@ -12,6 +12,7 @@ variable "oauth_token_id" {
   description = "Name of the workspace"
   default = null
 }
+
 variable "organization" {
   description = "Name of the organization."
 }
