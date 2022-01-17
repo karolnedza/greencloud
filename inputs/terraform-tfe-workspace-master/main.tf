@@ -8,14 +8,13 @@ resource "tfe_workspace" "managed" {
   # ssh_key_id            = var.ssh_key_id
   # terraform_version     = var.terraform_version
   # trigger_prefixes      = var.trigger_prefixes
+  #  working_directory = var.working_directory
 
   vcs_repo {
       identifier         = var.identifier
       oauth_token_id     = var.oauth_token_id
     }
-  }
 
-  working_directory = var.working_directory
 }
 
 # resource "tfe_team_access" "managed" {
