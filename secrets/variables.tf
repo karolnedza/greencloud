@@ -8,3 +8,5 @@ variable "tenant_id" {}
 
 
 variable "tf_token" {}
+
+variable "oauth_id" {}

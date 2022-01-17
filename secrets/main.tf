@@ -27,3 +27,9 @@ output "tf_token" {
   value = var.tf_token
   sensitive = true
 }
+
+
+output "oauth_id" {
+  value = var.oauth_id
+  sensitive = true
+}
