@@ -4,5 +4,6 @@ resource "tfe_workspace" "default" {
   organization = "greencloud"
   vcs_repo {
     identifier     = "karolnedza/avx-spoke-azure"
+    oauth_token_id =  data.terraform_remote_state.secrets.outputs.oauth_id
   }
 }
