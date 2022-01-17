@@ -2,6 +2,16 @@ variable "name" {
   description = "Name of the workspace"
 }
 
+variable "identifier" {
+  description = "Name of the workspace"
+  default = null
+}
+
+
+variable "oauth_token_id" {
+  description = "Name of the workspace"
+  default = null
+}
 variable "organization" {
   description = "Name of the organization."
 }

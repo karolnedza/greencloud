@@ -1,9 +1,9 @@
-
-# resource "tfe_workspace" "default" {
-#   name         =  element([for item in var.greencloud : item.name],length(var.greencloud)-1)
-#   organization = "greencloud"
-#   vcs_repo {
-#     identifier     = "karolnedza/avx-spoke-azure"
-#     oauth_token_id =  data.terraform_remote_state.secrets.outputs.oauth_id
-#   }
-# }
+module "tf_workspace" {
+  
+  for_each = var.greencloud
+  source = "./terraform-tfe-workspace-master"
+  cidr              = each.value.cidr
+  name              = each.value.name
+  identifier        = "karolnedza/avx-spoke-azure"
+  oauth_token_id =  data.terraform_remote_state.secrets.outputs.oauth_id
+}
