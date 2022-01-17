@@ -2,17 +2,6 @@ variable "name" {
   description = "Name of the workspace"
 }
 
-variable "identifier" {
-  description = "Name of the workspace"
-  default = null
-}
-
-
-variable "oauth_token_id" {
-  description = "Name of the workspace"
-  default = null
-}
-
 variable "organization" {
   description = "Name of the organization."
 }
@@ -37,16 +26,9 @@ variable "ssh_key_id" {
   default     = null
 }
 
-variable "team_access" {
-  description = "Associate teams to permissions on the workspace."
-  default = {
-  }
-  type = map(string)
-}
-
 variable "terraform_version" {
   description = "The version of Terraform to use for this workspace."
-  default     = null
+  default     = "1.0.0"
 }
 
 variable "trigger_prefixes" {
