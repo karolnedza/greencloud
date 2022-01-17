@@ -7,7 +7,6 @@ output "ctrl_password" {
   sensitive = true
 }
 
-
 output "client_id" {
   value = var.client_id
   sensitive = true
