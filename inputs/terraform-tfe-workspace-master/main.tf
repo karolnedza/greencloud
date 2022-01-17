@@ -17,6 +17,19 @@ resource "tfe_workspace" "managed" {
 
 }
 
+resource "tfe_variable" "terraform" {
+  for_each = var.greencloud["terraform"]
+
+  category  = "terraform"
+
+  
+  key       = each.key
+  value     = each.value
+  sensitive = false
+
+  workspace_id = tfe_workspace.managed.id
+}
+
 # resource "tfe_team_access" "managed" {
 #   for_each     = var.team_access
 #   access       = each.value
@@ -47,18 +60,6 @@ resource "tfe_workspace" "managed" {
 #   workspace_id = tfe_workspace.managed.id
 # }
 
-resource "tfe_variable" "terraform" {
-  for_each = lookup(var.greencloud, "terraform", {})
-
-  category  = "terraform"
-
-  
-  key       = each.key
-  value     = each.value
-  sensitive = false
-
-  workspace_id = tfe_workspace.managed.id
-}
 
 # resource "tfe_variable" "terraform_sensitive" {
 #   for_each = lookup(var.greencloud, "terraform_sensitive", {})
