@@ -55,7 +55,7 @@ variable "trigger_prefixes" {
   type        = list
 }
 
-variable "variables" {
+variable "greencloud" {
   description = "Map of environment or Terraform variables to define in the workspace."
   default = {
   }
