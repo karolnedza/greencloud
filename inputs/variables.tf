@@ -3,7 +3,7 @@ variable greencloud {
   type     = map
   default  = {
     sub1 = {
-      name  = "hnk-1"
+      name  = "hnk-1",
       id = "12112-4fdsf-32"
     },
     sub2 = {
