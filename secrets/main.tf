@@ -1,9 +1,9 @@
 output "ctrl_ip" {
   value = var.ctrl_ip
-} 
+}
 
 output "ctrl_password" {
-  value var.ctrl_password
+  value =  var.ctrl_password
 }
 
 
