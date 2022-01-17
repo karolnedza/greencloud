@@ -22,6 +22,7 @@ variable "variables" {
      {
       cidr = "10.10.0.1",
       region_name = "West Europe",
-      size = "not-used-atm"}
+      size = "not-used-atm"
+      }
   }
 }
