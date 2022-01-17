@@ -9,8 +9,8 @@ resource "tfe_workspace" "managed" {
   terraform_version     = var.terraform_version
   trigger_prefixes      = var.trigger_prefixes
 
-   vcs_repo {
-    content {
+  vcs_repo 
+     {
       identifier         = var.identifier
       oauth_token_id     = var.oauth_token_id
     }
