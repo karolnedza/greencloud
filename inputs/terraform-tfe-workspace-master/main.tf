@@ -2,15 +2,14 @@ resource "tfe_workspace" "managed" {
   name         = var.name
   organization = var.organization
 
-  auto_apply            = var.auto_apply
-  file_triggers_enabled = var.file_triggers_enabled
-  queue_all_runs        = var.queue_all_runs
-  ssh_key_id            = var.ssh_key_id
-  terraform_version     = var.terraform_version
-  trigger_prefixes      = var.trigger_prefixes
+  # auto_apply            = var.auto_apply
+  # file_triggers_enabled = var.file_triggers_enabled
+  # queue_all_runs        = var.queue_all_runs
+  # ssh_key_id            = var.ssh_key_id
+  # terraform_version     = var.terraform_version
+  # trigger_prefixes      = var.trigger_prefixes
 
-  vcs_repo 
-     {
+  vcs_repo {
       identifier         = var.identifier
       oauth_token_id     = var.oauth_token_id
     }
