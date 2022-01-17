@@ -17,7 +17,3 @@ variable greencloud {
     }
   }
 }
-
-variable "subs_secret" {
-  default = "FWFWEFWF"
-}
