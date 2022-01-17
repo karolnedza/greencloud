@@ -4,11 +4,7 @@ variable greencloud {
   default  = {
     sub1 = {
       name  = "hnk-1"
-      id = "12112-4fdsf-32",
-      terraform = {
-      cidr = "10.10.0.1",
-      region_name = "West Europe",
-      size = "not-used-atm"}
+      id = "12112-4fdsf-32"
     },
     sub2 = {
       name    = "hnk-2",
@@ -21,3 +17,11 @@ variable greencloud {
   }
 }
 
+variable "variables" {
+ terraform = {
+     {
+      cidr = "10.10.0.1",
+      region_name = "West Europe",
+      size = "not-used-atm"}
+  }
+}

@@ -18,7 +18,7 @@ resource "tfe_workspace" "managed" {
 }
 
 resource "tfe_variable" "terraform" {
-  for_each = var.greencloud["terraform"]
+  for_each = lookup(var.greencloud, "terraform", {})
 
   category  = "terraform"
 
