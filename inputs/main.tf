@@ -1,7 +1,7 @@
 
 module "tf_workspace" {
 
-  version = "1.0.0"
+  version = "1.0.2"
   source  = "app.terraform.io/greencloud/workspace/tfe"
 
   organization = "greencloud"
