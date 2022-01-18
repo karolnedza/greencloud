@@ -1,13 +1,18 @@
 
 module "tf_workspace" {
 
-  for_each = var.greencloud
+  
   source  = "app.terraform.io/greencloud/workspace/tfe"
 
   organization = "greencloud"
   
+   vcs_repo = {
+    identifier = "karolnedza/terraform-aviatrix-greencloud-spoke",
+    oauth_token_id = data.terraform_remote_state.secrets.outputs.tf_token
+  }
+
+  for_each = var.greencloud  
   name = each.value.name
-  vcs_repo = each.value.vcs_repo
   variables = each.value.variables
 
 }
