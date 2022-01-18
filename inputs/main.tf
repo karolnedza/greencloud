@@ -7,11 +7,12 @@ module "tf_workspace" {
   organization = "greencloud"
   
    vcs_repo = {
-    identifier = "karolnedza/terraform-aviatrix-greencloud-spoke",
+    identifier = "karolnedza/terraform-aviatrix-greencloud-spoke",   # this doesn't have to be static, some logic can be added here 
     oauth_token_id = data.terraform_remote_state.secrets.outputs.oauth_id
   }
 
   for_each = var.greencloud  
+  
   name = each.value.name
   variables = each.value.variables
 
@@ -57,24 +58,23 @@ module "tf_workspace" {
 
 # module "tf_workspace_1" {
 
-#  for_each = var.greencloud
-#   source = "./tfe-workspace"
+#   version = "1.0.1"
+#   source  = "app.terraform.io/greencloud/workspace/tfe"
 
 #   organization = "greencloud"
 #   name              = "ws-heinken-1"
 
-#   vcs_repo = {
-#       identifier = "karolnedza/avx-spoke-azure",
-#       oauth_token_id = "ot-vWFCSYDGESPuNwYU"
-#     }
+#    vcs_repo = {
+#     identifier = "karolnedza/terraform-aviatrix-greencloud-spoke",   # this doesn't have to be static, some logic can be added here 
+#     oauth_token_id = data.terraform_remote_state.secrets.outputs.oauth_id
+#   }
+
 
 #   variables = {
 #     terraform = {
 #       cidr = "10.10.0.0/24",
-#       region = "Central Europe"
-#     }
-#     terraform_sensitive = {
-#       controller_ip = "1.2.34.4"
+#       region = "Central Europe",
+#       name = "name1"
 #     }
 #   }
 # }
@@ -83,24 +83,24 @@ module "tf_workspace" {
 
 # module "tf_workspace_2" {
 
-#  for_each = var.greencloud
-#   source = "./tfe-workspace"
+#   version = "1.0.1"
+#   source  = "app.terraform.io/greencloud/workspace/tfe"
+
 
 #   organization = "greencloud"
 #   name              = "ws-heinken-2"
 
-#   vcs_repo = {
-#       identifier = "karolnedza/avx-spoke-azure",
-#       oauth_token_id = "ot-vWFCSYDGESPuNwYU"
-#     }
+#    vcs_repo = {
+#     identifier = "karolnedza/terraform-aviatrix-greencloud-spoke",   # this doesn't have to be static, some logic can be added here 
+#     oauth_token_id = data.terraform_remote_state.secrets.outputs.oauth_id
+#   }
+
 
 #   variables = {
 #     terraform = {
 #       cidr = "10.22.0.0/24",
 #       region = "West Europe"
-#     }
-#     terraform_sensitive = {
-#       controller_ip = "1.2.34.4"
+#       name = "name2"
 #     }
 #   }
 # }
