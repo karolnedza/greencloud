@@ -1,7 +1,7 @@
 
 module "tf_workspace" {
 
-  version = "1.0.1"
+  version = "1.0.0"
   source  = "app.terraform.io/greencloud/workspace/tfe"
 
   organization = "greencloud"
@@ -12,7 +12,7 @@ module "tf_workspace" {
   }
 
   for_each = var.greencloud  
-  
+
   name = each.value.name
   variables = each.value.variables
 
