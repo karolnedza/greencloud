@@ -8,7 +8,7 @@ module "tf_workspace" {
   
    vcs_repo = {
     identifier = "karolnedza/terraform-aviatrix-greencloud-spoke",
-    oauth_token_id = data.terraform_remote_state.secrets.outputs.tf_token
+    oauth_token_id = data.terraform_remote_state.secrets.outputs.oauth_id
   }
 
   for_each = var.greencloud  
