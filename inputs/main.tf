@@ -1,17 +1,17 @@
 
 module "tf_workspace" {
 
-  version = "1.0.4"
+  version = "1.0.5"
   source  = "app.terraform.io/greencloud/workspace/tfe"
 
   organization = "greencloud" # Static (?)
-  
+
    vcs_repo = {
-    identifier = "karolnedza/terraform-aviatrix-greencloud-spoke",   # this doesn't have to be static, it can be map with options  
+    identifier = "karolnedza/terraform-aviatrix-greencloud-spoke",   # this doesn't have to be static, it can be map with options
     oauth_token_id = data.terraform_remote_state.secrets.outputs.oauth_id
   }
 
-  for_each = var.greencloud  
+  for_each = var.greencloud
 
   name = each.value.name
   variables = each.value.variables
@@ -65,7 +65,7 @@ module "tf_workspace" {
 #   name              = "ws-heinken-1"
 
 #    vcs_repo = {
-#     identifier = "karolnedza/terraform-aviatrix-greencloud-spoke",   # this doesn't have to be static, some logic can be added here 
+#     identifier = "karolnedza/terraform-aviatrix-greencloud-spoke",   # this doesn't have to be static, some logic can be added here
 #     oauth_token_id = data.terraform_remote_state.secrets.outputs.oauth_id
 #   }
 
@@ -91,7 +91,7 @@ module "tf_workspace" {
 #   name              = "ws-heinken-2"
 
 #    vcs_repo = {
-#     identifier = "karolnedza/terraform-aviatrix-greencloud-spoke",   # this doesn't have to be static, some logic can be added here 
+#     identifier = "karolnedza/terraform-aviatrix-greencloud-spoke",   # this doesn't have to be static, some logic can be added here
 #     oauth_token_id = data.terraform_remote_state.secrets.outputs.oauth_id
 #   }
 
