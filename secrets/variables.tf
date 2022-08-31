@@ -1,4 +1,4 @@
-variable "ctrl_ip" {}
+variable "ctrl_ip" {default = "18.192.136.69"}
 
 variable "ctrl_password" {}
 
